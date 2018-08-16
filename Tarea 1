@@ -1,0 +1,80 @@
+#Tarea numero 1 
+#1.- Generar los vectores siguientes 
+#a) (1,2,3,...,15)
+vector1<-(1:15)
+vector1
+#b) (15,...,2,1)
+vector2<-(15:1)
+vector2
+#c) (1,2,3,...,15,15,14,...,2,1)
+vector3<-c(1:15,15:1)
+vector3
+#d) (2,7,8) asignale el nombre tiempo
+tiempo<-c(2,7,8)
+tiempo
+#e) ((1, 7, 9, 1, 7, 9, . . . , 1, 7, 9) este vector necesita que se repita con 7 el valor 9 . 
+#Tip usar la función repwhere there are 10 occurrences of 4.)
+vector4<-rep(c(1,7,9),7)
+vector4
+#f)(2,3,9,2,3,9,...2,3,9) se repita 15 veces el dato 3 y 9 veces el dato 2. 
+#Tip usar la función rep.
+vector5<-(c(rep(c(2,3,9),9),rep(c(3),6)))
+vector5
+#g)(7,7,...,7,0,0,...,0,5,5,...,5)repita 12 veces el 7,25 veces el 0 y 35 veces el 5. 
+vector6<-(c(rep(c(7),12),rep(c(0),25),rep(c(5),35)))
+vector6
+
+#2.-con base en los siguientes vectores
+set.seed(50)
+vector7 <- sample(0:999, 250, replace=T)
+vector8 <- sample(0:999, 250, replace=F)
+#a) describe las 4 lineas anterior
+#La primer linea es un vector generador de numeros random 
+#Las siguientes dos lineas son el rango de los valores que quieres ocupar,
+#luego la cantidad de numeros que vas a quererer en el vector y al final si los numeros van a ser con remplazo o no 
+
+#Matrices 
+#1.-. si tenemos la sig matriz
+#1	1	3
+#5	2	6
+#-2	-1 	3
+#remplaza la primera columna y agrega los datos de la suma del segundo y tercera columna. 
+matris1<-matrix(c(1,5,-2,1,2,-1,3,6,3),3,3)
+matris1
+replace(matris1,1,4)
+replace(matris1,2,8)
+replace(matris1,3,2)
+
+#2.genera una matriz de  8 × 9 de valores aleatorios enteros y con un rango entre 0 y 9.
+matris2<-matrix(c(sample(0:9),9,replace=T),8,9)
+  matris2
+#a)encuentra los valores que tengan el número 1 y extraigalos
+
+#b) extraiga el valor que esta en el renglon 1 columna 3
+  matris2[1,3]
+#c)genera una matriz donde uses el argumento byrow= , nrow=…. Con 5 rennglones
+  matris3<-matrix(1:10, nrow = 5, byrow = TRUE)
+matris3  
+#d) de la matriz de 8x9 extra la columna 7 declarala como un nuevo vector
+vector8<-array(matris2,8,)
+vector8
+#e)suma cada una de las columnas y los renglones de la matriz de 8x9 y 
+#genera dos vectores nuevos que contengan todo la columna y renglon seleccionada
+
+#f) genera una matriz de 4 renglonesy 5 columnas  que se llame s y calcula lo siguientes
+#investiga la función rowMeans() y colMeans()
+s<-matrix(1:10,4,5)
+s
+#la media de la columna 5 
+mean(s[,5])
+#la varianza del renglon 2
+var(s[2,])
+#menciona que columna y renglon tienen la media más alta
+#la media del renglon 4 y 6 son las mas altas
+#la media de la columna 5 es la mas alta
+colMeans(s, na.rm = FALSE, dims = 1)
+rowMeans(s, na.rm = FALSE, dims = 1)
+#g) de la matriz de 8x9 agregale una columna solo con valores de 1
+cbind(matris2,c(1,1,1,1,1,1,1,1)) 
+#h) de la matriz de 4 renglones y 5 columnas agregale un renglon  solo con valores de 0
+rbind(s,c(0,0,0,0,0)) 
