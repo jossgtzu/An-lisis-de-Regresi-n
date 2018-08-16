@@ -1,0 +1,70 @@
+#1) Crear una matriz con la funcion dim() de 4 columnas y 5 renglones,
+#esta matriz esta basada en un vector que contienes datos 11:31
+#el nombre de los renglones es el siguiente Toluca, pachuca, gdl, mty)
+#el nombre de las columnas es (escuela1,escuela2,escuela3,escuela4,escuela5)
+#Incorporar el nombre a los renglones y columnas a la matri<z
+#identificar el dato de la escuela3 de toluca, de la escuela5 de gdl y la escuela1 de pachuca
+matris1<-matrix(11:31,4,5)
+dim(matris1)
+dimnames(matris1)<-list(c("Toluca","Pachuca","Guadalajara","Monterrey"),  
+                      c("Escuela1","Escuela2","Escuela3","Escuela4","Escuela5"))
+matris1
+matris1[1,3] #Escuela 3 Toluca
+matris1[3,5] #Escuela 5 Guadalajara
+matris1[2,1] #Escuela 1 Pachuca 
+
+#2)Crear con la función matrix una matriz de 6 renglones y 3 columbas...
+#y preguntar por el dato de la matriz en el renglon 3 y columna 3
+matris2<-matrix(1:18,6,3)
+matris2
+matris2[3,3]
+
+#3) Completar el codigo s<-matrix(1:9,nrow=3)
+#s[][] S[,1]
+#4 10 18
+#Posibles respuestas * 2 + ,2 ,3 
+s<-matrix(1:9,nrow=3)
+s
+s[,2]*s[,1]
+
+#4)a<-c("pequeño","largo","enorme")
+#b<-a!="largo"
+#"pequeño""enorme"
+a<-c("pequeño","largo","enorme")
+  b<-a!="largo"
+a[b]
+
+#5) Crear 3 variables de 4 entradas. Las variables de nombre: facultad, licenciatura
+#verificar con r que tipo de variables son (numerico y caracter)
+#borrar las variables facultad y calificacion del alumno 3
+#graficar con pie la variable calificacion incorporar los diversos argumentos 
+fac<-c("Economia","Ingenieria","Ciencias","Humanidades")
+lic<-c("Actuaría","Civil","Fisica","Filosofia")
+cali<-c(7,8,7,10)
+str(fac)
+str(lic)
+  df=data.frame(fac,lic,cali)
+df
+df[-3,]
+df[,-1]
+pie(cali, labels=lic, main="calificaciones")
+str(cali)
+
+
+#6) generar esta iformación se tiene 4 personas de 32,35,43 y 25 años 
+#de nombres Carlos, Juan, Raquel y Paty, su situación conyugal 
+#casado, soltero, soltero, union libre
+#IMSS,IMSS,ISSSTE Y PRIVADO
+#hacer un dataframe 
+#encontrar ocupacion de juan y paty 
+#situacion conyugal de paty y juan 
+#la suma de las edades!!
+
+nombre=c("Carlos", "Juan", "Raquel" , "Paty")
+años=c( 32,35,43,25)
+ss=c("casado", "soltero", "soltero", "union libre")
+seguro=c("IMSS","IMSS","ISSSTE", "PRIVADO")
+dfr=data.frame(nombre,años,ss,seguro)
+dfr
+c=sum(dfr[,2])
+c
