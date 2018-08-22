@@ -1,0 +1,33 @@
+x<-c(32,129,120,113.2,105,92,84,83.2,88.4,59,80,81.5,71,69.2)
+x
+y<-c(46,48,51,52.1,54,52,59,58.7,61.6,64,61.4,54.6,58.8,58)
+y
+
+#Grafica de dispersion 
+install.packages("ggplot2")
+library(ggplot2)
+ggplot(data=NULL, aes(y=y,x=x))+geom_point()
+
+#Describe la grafica
+##La grafica presenta una fuerza media con una relacion negativa
+
+#Calcular B0 y B1
+
+#B1
+mean(x)
+mean(y)
+
+numx<-c(sum((x-mean(x))*(y-mean(y))))
+denx<-c(sum((x-mean(x))*(x-mean(x))))
+
+denx
+
+b1<-c(numx/denx)
+b1
+
+#Para B0
+num2<-c((sum(y)-b1*sum(x))/14)
+num2
+
+#Graficar la recta con grafica de dispersion:
+ggplot(data=NULL, aes(y=y,x=x))+geom_point()+geom_smooth(method=("lm"))
