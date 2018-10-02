@@ -1,0 +1,29 @@
+install.packages("swiss")
+require("swiss")
+install.packages("dataset")
+data("swiss")
+plot(swiss)
+mod1<-lm(Fertility ~ Agriculture + Examination 
+         + Education + Catholic + Infant.Mortality, data=swiss)
+show(mod1) #para sacar las betas 
+mod1$coefficients #Saca las betas pero con mas decimales 
+summary(mod1)
+##Se puede ver en el summary que Examination no tiene significancia en el modelo 
+## no se puede hacer inferencia en ella, porque no tiene importancia, pero si 
+#teoricamente es imporante se puede dejar. 
+
+#la fecundidad disminuye -.1721% por cada 1% de hombres que tabajan en agricultura, cuando las 
+#demas variables se mantienen constantes 
+
+mod2<-lm(Fertility ~ Agriculture, data=swiss)
+show(mod2)
+summary(mod2)
+
+#La fecundidad aumenta en .19 por cada 1% de hombres trabajando en agricultura
+
+cor(swiss)
+anova(mod1)
+
+mod3<-lm(Fertility ~ Agriculture 
+         + Education + Catholic + Infant.Mortality, data=swiss)
+summary(mod3)
